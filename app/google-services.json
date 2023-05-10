@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "572958258252",
+    "project_id": "organdonationportal-13a82",
+    "storage_bucket": "organdonationportal-13a82.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:572958258252:android:197943495cda8e98d970e9",
+        "android_client_info": {
+          "package_name": "com.example.myapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "572958258252-kfhhk9rmq2p9mun8m5m71cf3mjireiaa.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD_g-oD7yOBo-kYIrtPjhZChKgecX6Tx8k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "572958258252-kfhhk9rmq2p9mun8m5m71cf3mjireiaa.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

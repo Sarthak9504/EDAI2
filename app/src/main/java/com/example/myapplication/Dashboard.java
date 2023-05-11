@@ -43,7 +43,7 @@ public class Dashboard extends AppCompatActivity {
         addPost.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(Dashboard.this, FillProfile.class));
+                startActivity(new Intent(Dashboard.this, AddPost.class));
             }
         });
 

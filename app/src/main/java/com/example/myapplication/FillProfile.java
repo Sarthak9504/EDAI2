@@ -9,7 +9,13 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 public class FillProfile extends AppCompatActivity {
+
+
+    DatabaseReference userRef;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,8 +37,7 @@ public class FillProfile extends AppCompatActivity {
         final EditText organNo = findViewById(R.id.organPhone);
         final EditText dinNo = findViewById(R.id.dinNo);
         final EditText formReg = findViewById(R.id.formReg);
-        final EditText validFrom = findViewById(R.id.from);
-        final EditText validUpto = findViewById(R.id.to);
+
 
         final String directEmailToString = convertToString(directEmail);
         final String directPhoneToString = convertToString(directPhone);
@@ -48,16 +53,15 @@ public class FillProfile extends AppCompatActivity {
         final String organNoToString = convertToString(organNo);
         final String dinNoToString = convertToString(dinNo);
         final String formRegToString = convertToString(formReg);
-        final String validFromToString = convertToString(validFrom);
-        final String validUptoToString = convertToString(validUpto);
+      ;
 
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (isEmpty(directEmailToString) || isEmpty(directPhoneToString) || isEmpty(addLine1ToString) || isEmpty(addLine2ToString) ||
                         isEmpty(addLine3ToString) || isEmpty(yearToString) || isEmpty(adminEmailToString) || isEmpty(adminNoToString) || isEmpty(emgNoToString) ||
-                        isEmpty(emgEmailToString) || isEmpty(organEmailToString) || isEmpty(organNoToString) || isEmpty(dinNoToString) || isEmpty(formRegToString) ||
-                        isEmpty(validFromToString) || isEmpty(validUptoToString))
+                        isEmpty(emgEmailToString) || isEmpty(organEmailToString) || isEmpty(organNoToString) || isEmpty(dinNoToString) || isEmpty(formRegToString)
+                        )
                 {
                     Toast.makeText(FillProfile.this, "Please fill all the details", Toast.LENGTH_SHORT).show();
                 } else if (stringLength(directPhoneToString) != 10 || stringLength(yearToString) != 10 || stringLength(adminNoToString) != 10 ||
@@ -66,12 +70,18 @@ public class FillProfile extends AppCompatActivity {
                 {
                     Toast.makeText(FillProfile.this, "Please enter Valid details", Toast.LENGTH_SHORT).show();
                 } else {
-                    startActivity(new Intent(FillProfile.this, UploadDocuments.class));
-                }
+                    userRef = FirebaseDatabase.getInstance().getReference("Hospital Information");
+                  //  HospitalInformation hospitalInformation = new HospitalInformation(directPhoneToString,directEmailToString);
+                    userRef.child("Director's Details").setValue(new HospitalInformation(directPhoneToString,directEmailToString));
+                    HospitalInformation hospitalAddress = new HospitalInformation(addLine1ToString,addLine2ToString,addLine3ToString);
+                    userRef.child("name").setValue(hospitalAddress);
+                    userRef.child("name").setValue(new HospitalInformation(yearToString));
+                    userRef.child("Admin Info").setValue(adminNoToString,add);
+
+                    startActivity(new Intent(FillProfile.this, UploadDocuments.class));}
             }
         });
     }
-
     private String convertToString(EditText string) {
         return string.getText().toString();
     }

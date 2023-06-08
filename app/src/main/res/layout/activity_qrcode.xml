@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".QRCode">
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/generateQR"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="25dp"
+        android:background="@drawable/round_back_primary_15"
+        android:text="GenerateQR"
+        android:paddingTop="10dp"
+        android:paddingHorizontal="150dp"
+        android:textSize="17sp"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFFFF" />
+    
+    <ImageView
+        android:id="@+id/qrCode"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scaleType="fitCenter"
+        android:adjustViewBounds="true"
+        android:layout_marginTop="200dp"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/save"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="25dp"
+        android:background="@drawable/round_back_primary_15"
+        android:text="Save"
+        android:paddingTop="10dp"
+        android:paddingHorizontal="150dp"
+        android:textSize="17sp"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFFFF" />
+
+
+
+
+
+
+
+
+</RelativeLayout>

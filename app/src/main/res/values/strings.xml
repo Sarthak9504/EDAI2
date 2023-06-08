@@ -9,4 +9,7 @@
 
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: </string>
+    <string name="qr_code">qr_code</string>
+    <string name="generate_qr_code">Generate QR Code</string>
+
 </resources>

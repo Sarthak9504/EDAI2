@@ -12,17 +12,27 @@
         android:orientation="vertical"
         android:layout_gravity="center_vertical">
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="100dp"
+            android:paddingStart="140dp"
+            android:text="Log In as a"
+            android:textColor="@color/black"
+            android:textSize="25sp"
+            android:textStyle="bold" />
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/addDonor"
+            android:id="@+id/hospital"
             android:layout_width="350dp"
-            android:layout_height="60dp"
+            android:layout_height="55dp"
+            android:layout_gravity="center_vertical"
             android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
             android:background="@drawable/round_back_primary_15"
-            android:text="Add new Donor"
-            android:textSize="16sp"
+            android:text="Hospital"
+            android:textSize="18sp"
             android:paddingTop="10dp"
-            android:paddingBottom="10dp"
             android:paddingHorizontal="140dp"
             android:textAllCaps="false"
             android:textColor="#FFFFFFFF" />
@@ -65,18 +75,17 @@
         </RelativeLayout>
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/viewDonor"
+            android:id="@+id/donor"
             android:layout_width="350dp"
-            android:layout_height="60dp"
+            android:layout_height="55dp"
             android:layout_gravity="center_vertical"
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
             android:layout_marginTop="20dp"
             android:background="@drawable/round_back_primary_15"
-            android:text="View donors"
+            android:text="Donor"
             android:textSize="18sp"
             android:paddingTop="10dp"
-            android:paddingBottom="10dp"
             android:paddingHorizontal="150dp"
             android:textAllCaps="false"
             android:textColor="#FFFFFFFF" />

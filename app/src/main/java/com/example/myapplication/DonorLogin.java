@@ -19,15 +19,16 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
-public class Login extends AppCompatActivity {
+public class DonorLogin extends AppCompatActivity {
+
+    FirebaseAuth userAuth;
 
     private boolean passwordShowing = false;
-    FirebaseAuth userAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        setContentView(R.layout.activity_donor_login);
 
         final EditText email = findViewById(R.id.userEmail);
 
@@ -69,16 +70,15 @@ public class Login extends AppCompatActivity {
                     email.setError("Password cannot be empty");
                     email.requestFocus();
                 } else {
-                    
+
                     userAuth = FirebaseAuth.getInstance();
                     userAuth.signInWithEmailAndPassword(userEmail, userPassword).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()) {
-                                Intent intent = new Intent(Login.this, Dashboard.class);
-                                startActivity(intent);
+                                startActivity(new Intent(DonorLogin.this, DonorDashboard.class));
                             } else {
-                                Toast.makeText(Login.this, "User not registered ", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(DonorLogin.this, "User not registered ", Toast.LENGTH_SHORT).show();
                             }
                         }
                     });
@@ -89,10 +89,10 @@ public class Login extends AppCompatActivity {
         signUpBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(Login.this, Register.class));
+                startActivity(new Intent(DonorLogin.this, DonorRegisteration.class));
             }
         });
 
 
     }
-}
+    }

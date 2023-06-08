@@ -6,8 +6,8 @@
     android:layout_height="match_parent"
     android:gravity="center"
     android:orientation="vertical"
-    tools:context=".Login">
-    
+    tools:context=".DonorLogin">
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -35,7 +35,6 @@
         android:background="@drawable/round_black_dark_15"
         android:hint="Email"
         android:inputType="text"
-        android:paddingTop="20dp"
         android:maxLines="1"
         android:paddingStart="20dp"
         android:paddingEnd="20dp"
@@ -51,12 +50,11 @@
         <EditText
             android:id="@+id/passwordET"
             android:layout_toStartOf="@+id/passwordIcon"
-            android:layout_width="380dp"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@android:color/transparent"
             android:hint="Password"
             android:inputType="textPassword"
-            android:paddingTop="20dp"
             android:maxLines="1"
             android:paddingStart="20dp"
             android:paddingEnd="20dp"
@@ -81,7 +79,7 @@
         android:layout_height="55dp"
         android:layout_marginEnd="20dp"
         android:layout_marginTop="40dp"
-        android:text="Sign In"
+        android:text="Sign in"
         android:textSize="20sp"
         android:paddingTop="10dp"
         android:paddingHorizontal="150dp"

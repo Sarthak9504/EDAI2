@@ -2,6 +2,12 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" />
+
+    <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission
         android:name="android.permission.QUERY_ALL_PACKAGES"
         tools:ignore="QueryAllPackagesPermission" />
@@ -16,13 +22,43 @@
         android:theme="@style/Theme.MyApplication"
         tools:targetApi="31">
         <activity
+            android:name=".ScanQR"
+            android:exported="false" />
+        <activity
+            android:name=".DonorDocuments"
+            android:exported="false" />
+        <activity
+            android:name=".QRCode"
+            android:exported="false" />
+        <activity
+            android:name=".DonorDashboard"
+            android:exported="false" />
+        <activity
+            android:name=".DonorRegisteration"
+            android:exported="false" />
+        <activity
+            android:name=".DonorLogin"
+            android:exported="false" />
+        <activity
+            android:name=".FirstPage"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ReceivedMessages"
+            android:exported="true" />
+        <activity
             android:name=".UploadDocuments"
             android:exported="true" />
         <activity
             android:name=".AddPost"
             android:exported="true" />
         <activity
-            android:name=".PatrientDetails"
+            android:name=".PatientDetails"
             android:exported="true" />
         <activity
             android:name=".DonorDetails"
@@ -38,13 +74,7 @@
             android:exported="true" />
         <activity
             android:name=".Login"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:exported="true" />
     </application>
 
 </manifest>

@@ -7,7 +7,7 @@
     tools:context=".FillProfile">
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="390dp"
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
@@ -17,20 +17,36 @@
             android:layout_gravity="top|center"
             android:layout_marginTop="27dp"
             android:paddingStart="27dp"
-            android:text="Fill the necessary details to access the features of the app"
+            android:text="Fill up the personal details"
             android:textColor="@color/black"
             android:textSize="25sp"
             android:textStyle="bold" />
 
         <EditText
-            android:id="@+id/directEmail"
+            android:id="@+id/donorName"
             android:layout_width="match_parent"
             android:layout_height="55dp"
             android:layout_marginStart="20dp"
             android:layout_marginTop="20dp"
             android:layout_marginEnd="20dp"
             android:background="@drawable/round_black_dark_15"
-            android:hint="Email address of the director of the Hospital"
+            android:hint="full name "
+            android:inputType="text"
+            android:maxLines="1"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:textSize="16sp" />
+
+
+        <EditText
+            android:id="@+id/donorEmail"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/round_black_dark_15"
+            android:hint="Email "
             android:inputType="text"
             android:maxLines="1"
             android:paddingStart="20dp"
@@ -38,14 +54,14 @@
             android:textSize="16sp" />
 
         <EditText
-            android:id="@+id/directPhone"
+            android:id="@+id/donorPhone"
             android:layout_width="match_parent"
             android:layout_height="55dp"
             android:layout_marginStart="20dp"
             android:layout_marginTop="20dp"
             android:layout_marginEnd="20dp"
             android:background="@drawable/round_black_dark_15"
-            android:hint="Telephone number of the director of the Hospital"
+            android:hint="Mobile number"
             android:inputType="phone"
             android:maxLines="1"
             android:paddingStart="20dp"
@@ -54,14 +70,14 @@
 
 
         <EditText
-            android:id="@+id/addLine1"
+            android:id="@+id/donorAddress"
             android:layout_width="match_parent"
             android:layout_height="55dp"
             android:layout_marginStart="20dp"
             android:layout_marginTop="20dp"
             android:layout_marginEnd="20dp"
             android:background="@drawable/round_black_dark_15"
-            android:hint="Address Line No.1"
+            android:hint="Address"
             android:inputType="text"
             android:maxLines="1"
             android:paddingStart="20dp"
@@ -69,44 +85,14 @@
             android:textSize="16sp" />
 
         <EditText
-            android:id="@+id/addLine2"
+            android:id="@+id/donorAge"
             android:layout_width="match_parent"
             android:layout_height="55dp"
             android:layout_marginStart="20dp"
             android:layout_marginTop="20dp"
             android:layout_marginEnd="20dp"
             android:background="@drawable/round_black_dark_15"
-            android:hint="Address Line No.2"
-            android:inputType="text"
-            android:maxLines="1"
-            android:paddingStart="20dp"
-            android:paddingEnd="20dp"
-            android:textSize="16sp" />
-
-        <EditText
-            android:id="@+id/addLine3"
-            android:layout_width="match_parent"
-            android:layout_height="55dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="20dp"
-            android:background="@drawable/round_black_dark_15"
-            android:hint="Address Line No.3"
-            android:inputType="text"
-            android:maxLines="1"
-            android:paddingStart="20dp"
-            android:paddingEnd="20dp"
-            android:textSize="16sp" />
-
-        <EditText
-            android:id="@+id/year"
-            android:layout_width="match_parent"
-            android:layout_height="55dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="20dp"
-            android:background="@drawable/round_black_dark_15"
-            android:hint="Year of Establishment"
+            android:hint="Age"
             android:inputType="number"
             android:maxLines="1"
             android:paddingStart="20dp"
@@ -114,29 +100,14 @@
             android:textSize="16sp" />
 
         <EditText
-            android:id="@+id/adminNo"
+            android:id="@+id/donorGender"
             android:layout_width="match_parent"
             android:layout_height="55dp"
             android:layout_marginStart="20dp"
             android:layout_marginTop="20dp"
             android:layout_marginEnd="20dp"
             android:background="@drawable/round_black_dark_15"
-            android:hint="Admin Mobile no."
-            android:inputType="phone"
-            android:maxLines="1"
-            android:paddingStart="20dp"
-            android:paddingEnd="20dp"
-            android:textSize="16sp" />
-
-        <EditText
-            android:id="@+id/adminEmail"
-            android:layout_width="match_parent"
-            android:layout_height="55dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="20dp"
-            android:background="@drawable/round_black_dark_15"
-            android:hint="Admin email address"
+            android:hint="Gender"
             android:inputType="text"
             android:maxLines="1"
             android:paddingStart="20dp"
@@ -144,14 +115,44 @@
             android:textSize="16sp" />
 
         <EditText
-            android:id="@+id/dinNo"
+            android:id="@+id/donorDisease"
             android:layout_width="match_parent"
             android:layout_height="55dp"
             android:layout_marginStart="20dp"
             android:layout_marginTop="20dp"
             android:layout_marginEnd="20dp"
             android:background="@drawable/round_black_dark_15"
-            android:hint="Enter the DIN NO"
+            android:hint="Disease suffering from(if not then null)"
+            android:inputType="text"
+            android:maxLines="1"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/donorBlood"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/round_black_dark_15"
+            android:hint="Blood Group"
+            android:inputType="text"
+            android:maxLines="1"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/donorWeight"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/round_black_dark_15"
+            android:hint="Weight"
             android:inputType="number"
             android:maxLines="1"
             android:paddingStart="20dp"
@@ -159,22 +160,53 @@
             android:textSize="16sp" />
 
         <EditText
-            android:id="@+id/formReg"
+            android:id="@+id/adhaar"
             android:layout_width="match_parent"
             android:layout_height="55dp"
             android:layout_marginStart="20dp"
             android:layout_marginTop="20dp"
             android:layout_marginEnd="20dp"
             android:background="@drawable/round_black_dark_15"
-            android:hint="Form C Registration number"
+            android:hint="Adhaar number"
             android:inputType="number"
+            android:maxLines="1"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:textSize="16sp" />
+
+
+        <EditText
+            android:id="@+id/password"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/round_black_dark_15"
+            android:hint="Password"
+            android:inputType="text"
+            android:maxLines="1"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/conPassword"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/round_black_dark_15"
+            android:hint="Confirm Password"
+            android:inputType="text"
             android:maxLines="1"
             android:paddingStart="20dp"
             android:paddingEnd="20dp"
             android:textSize="16sp" />
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/next"
+            android:id="@+id/signUpET"
             android:layout_width="match_parent"
             android:layout_height="55dp"
             android:layout_marginStart="20dp"
@@ -182,7 +214,7 @@
             android:layout_marginEnd="20dp"
             android:layout_marginBottom="25dp"
             android:background="@drawable/round_back_primary_15"
-            android:text="Next"
+            android:text="Sign Up"
             android:textSize="20sp"
             android:paddingTop="10dp"
             android:paddingHorizontal="150dp"

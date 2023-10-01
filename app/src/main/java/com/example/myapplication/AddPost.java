@@ -4,7 +4,11 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
 import androidx.collection.ArraySet;
+import androidx.core.app.NotificationCompat;
 
+import android.app.NotificationManager;
+import android.app.PendingIntent;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -24,17 +28,31 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.ktx.Firebase;
+import com.google.firebase.messaging.FirebaseMessaging;
+import com.google.firebase.messaging.FirebaseMessagingService;
+import com.google.firebase.messaging.RemoteMessage;
 
 import android.util.Log;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.OutputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Random;
 
 public class AddPost extends AppCompatActivity {
 
 
     DatabaseReference userRef;
     FirebaseDatabase rootNode;
+
+    long messageID = System.currentTimeMillis();
+    long messageId = System.currentTimeMillis();
+
 
     //FirebaseAuth  FirebaseAuth;
 
@@ -53,6 +71,7 @@ public class AddPost extends AppCompatActivity {
         final EditText organSize = findViewById(R.id.organSize);
         final EditText organType = findViewById(R.id.organType);
         final AppCompatButton sendBtn = findViewById(R.id.send);
+
 
         sendBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -83,13 +102,12 @@ public class AddPost extends AppCompatActivity {
                     String uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
                     userRef.child(uid).child("Donor Request").child(patientNameTxt).setValue(postData);
                     Toast.makeText(AddPost.this, "Message sent successfully", Toast.LENGTH_SHORT).show();
+
                     startActivity(new Intent(AddPost.this, Dashboard.class));
                 }
             }
 
         });
-
-
     }
 
     private boolean isEmpty(String string) {

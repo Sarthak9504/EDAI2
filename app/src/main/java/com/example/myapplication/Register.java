@@ -37,7 +37,7 @@ public class Register extends AppCompatActivity {
     FirebaseAuth userAuth;
     FirebaseDatabase rootNode;
     DatabaseReference userRef;
-    FirebaseAuth.AuthStateListener mAuthListener;
+
 
 
 
@@ -79,7 +79,6 @@ public class Register extends AppCompatActivity {
                     //moves the cursor till end of the password
                     password.setSelection(password.length());
                 }
-
 
             }
         });
@@ -146,9 +145,8 @@ public class Register extends AppCompatActivity {
 
                                 rootNode = FirebaseDatabase.getInstance();
                                 userRef = rootNode.getReference("Hospital Information");
-
-
                                 userRef.child(userId).setValue(userHelperClass);
+
 
                                 Toast.makeText(Register.this, "User registered successfully", Toast.LENGTH_SHORT).show();
                                 startActivity(new Intent(Register.this,Dashboard.class));

@@ -20,7 +20,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-
     <GridLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -126,9 +125,7 @@
                 android:textColor="#FFFFFFFF"
                 android:textSize="18sp"
                 android:textStyle="bold" />
-
         </androidx.cardview.widget.CardView>
-
 
         <androidx.cardview.widget.CardView
             android:id="@+id/patientDetails"

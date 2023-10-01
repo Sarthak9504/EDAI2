@@ -78,7 +78,7 @@ public class Login extends AppCompatActivity {
                                 Intent intent = new Intent(Login.this, Dashboard.class);
                                 startActivity(intent);
                             } else {
-                                Toast.makeText(Login.this, "User not registered ", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(Login.this, "User not registered", Toast.LENGTH_SHORT).show();
                             }
                         }
                     });

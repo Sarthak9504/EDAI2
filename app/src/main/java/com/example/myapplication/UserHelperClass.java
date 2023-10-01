@@ -111,6 +111,7 @@ public class UserHelperClass {
     }
 
     public UserHelperClass(String hospitalName,String email, String mob, String password) {
+        this.hospitalName = hospitalName;
         this.email = email;
         this.mob = mob;
         this.password = password;

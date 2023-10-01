@@ -21,7 +21,6 @@ public class Dashboard extends AppCompatActivity {
         final CardView addPost = findViewById(R.id.addPost);
         final CardView message = findViewById(R.id.message);
 
-
         fillProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

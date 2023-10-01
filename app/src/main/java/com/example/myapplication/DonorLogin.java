@@ -78,7 +78,7 @@ public class DonorLogin extends AppCompatActivity {
                             if (task.isSuccessful()) {
                                 startActivity(new Intent(DonorLogin.this, DonorDashboard.class));
                             } else {
-                                Toast.makeText(DonorLogin.this, "User not registered ", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(DonorLogin.this, "User not registered", Toast.LENGTH_SHORT).show();
                             }
                         }
                     });

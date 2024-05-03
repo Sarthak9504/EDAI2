@@ -134,7 +134,7 @@ public class Register extends AppCompatActivity {
                     conPassword.requestFocus();
                 } else {
                     userAuth = FirebaseAuth.getInstance();
-                    userAuth.createUserWithEmailAndPassword(getEmailTxt, conPasswordToString).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                    userAuth.createUserWithEmailAndPassword(getEmailTxt.trim(), conPasswordToString.trim()).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
 
@@ -146,7 +146,6 @@ public class Register extends AppCompatActivity {
                                 rootNode = FirebaseDatabase.getInstance();
                                 userRef = rootNode.getReference("Hospital Information");
                                 userRef.child(userId).setValue(userHelperClass);
-
 
                                 Toast.makeText(Register.this, "User registered successfully", Toast.LENGTH_SHORT).show();
                                 startActivity(new Intent(Register.this,Dashboard.class));
